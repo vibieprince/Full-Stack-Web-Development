@@ -1,0 +1,22 @@
+.counter-container{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 1.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#btn{
+    color: black;
+    background-color: rgb(150, 212, 100);
+    border: none;
+    padding: 0.5rem;
+    margin: 4px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;    
+}
+#btn:active{
+    background-color: rgb(130, 204, 70);
+}
