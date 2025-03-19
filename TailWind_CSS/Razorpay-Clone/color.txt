@@ -1,0 +1,19 @@
+deepBlue: "#02042a",
+
+LightBlue: "#2b84ea",
+
+LightBlue300: "#4b94ed",
+
+LightBlue500: "#8b72e7",
+
+greenLight: "#61cea6",
+
+grayText: "#818597",
+
+LightGray: "#e2e2e2",
+
+grayBlue: "#344a6c",
+
+deepBlueHead: "#162f56",
+
+gray2: "#525a76",
