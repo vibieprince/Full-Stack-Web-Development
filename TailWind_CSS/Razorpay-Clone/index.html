@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/feather-icons"></script>
     <title>Razorpay</title>
 
 </head>
@@ -55,7 +56,7 @@
     </nav>
 
     <!--Hero Section-->
-    <section class="h-135 relative" style="background-color: #02042a;">
+    <section class="h-130 relative" style="background-color: #02042a;">
         <div class="w-10/12 max-w-[1080px] flex flex-row justify-between items-center mx-auto">
             <!--Left Part-->
             <div class="space-y-5">
@@ -67,12 +68,56 @@
             <!--Right Part-->
             <img src="./Images/illustration.jpg" class="max-w-[680px]">
         </div>
-
-        
     </section>
+
     <!--Shape part-->
     <div>
-        <img src="./Images/bottom.png" alt="bottom" class="w-[101%]"></img>
-    </div>
+        <img src="./Images/bottom.png" alt="bottom" class="-mt-[0.4px]"></img>
+    </div>   
+
+    <!--Feature Section-->
+    <section class="relative overflow-hidden">
+        <img src="./Images/dots.jpg" alt="" loading="lazy" class="absolute -mt-[100px] opacity-70 left-[10rem]">
+        <img src="./Images/dots.jpg" alt="" loading="lazy" class="absolute top-[1rem] right-5 opacity-70">
+
+        <div class="h-250 relative w-11/12 max-w-[1080px] mx-auto pt-4">
+            <!--heading-->
+            <h2 class="font-extrabold text-center text-2xl leading-[1.2]">Accept Payments with Razorpay Payment Suite</h2>
+            <div class="w-6 h-1 rounded-2xl mx-auto mt-4 mb-4" style="background-color: #61cea6;"></div>
+
+            <!--Content box-->
+            <div class="w-full flex border rounded-md relative p-10 " style="background-color: #f6fafe;">
+                <!--Left Section-->
+                <div class="flex flex-col justify-between w-full space-y-7">
+                    <h1 class="font-bold text-[28px] leading-10">Supercharge your business with the all powerful <span class="text-blue-500">Payment Gateway</span></h1>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-x-2">
+                            <i data-feather="check" style="background-color: #61cea6;" class="rounded-full size-5"></i>
+                            <span>100+ Payment Methods</span>
+                        </li>
+                        <li class="flex items-center space-x-2"><i data-feather="check" style="background-color: #61cea6;" class="rounded-full size-5"></i><span>Industry Leading Success Rate</span></li>
+                        <li class="flex items-center space-x-2"><i data-feather="check" style="background-color: #61cea6;" class="rounded-full size-5"></i><span>Superior Checkout Experience</span></li>
+                        <li class="flex items-center space-x-2"><i data-feather="check" style="background-color: #61cea6;" class="rounded-full size-5"></i><span>Easy to Integrate</span></li>
+                        <li class="flex items-center space-x-2"><i data-feather="check" style="background-color: #61cea6;" class="rounded-full size-5"></i><span>Instant Settlements from day 1</span></li>
+                        <li class="flex items-center space-x-2"><i data-feather="check" style="background-color: #61cea6;" class="rounded-full size-5"></i><span>In-depth Reporting and Insights</span></li>
+                    </ul>
+
+                    <!-- For button and hyperlink-->
+                    <div class="flex flex-row items-center space-x-4">
+                        <button class=" flex items-center rounded-md cursor-pointer w-fit text-white py-[14px] px-[10px] font-bold" style="background-color:#2b84ea;">Sign Up Now <i data-feather="arrow-up-right"></i>
+                        </button>
+                        <div class="flex items-center cursor-pointer group">
+                            <a href="#" class="font-bold hover:text-blue-500 transition-all duration-200">Know more</a>
+                            <i data-feather="chevron-right" class="hover:text-blue-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <img src="./Images/Razor-payment-gateway.webp" alt="razorpay-payment" class="max-w-[500px]">
+            </div>
+        </div>
+    </section>
+    <script>
+        feather.replace()
+    </script>
 </body>
 </html>
