@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sports Networking</title>
+    <style>
+        .fade {
+            animation: fadeEffect 2s ease-in-out infinite;
+        }
+        @keyframes fadeEffect {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-black text-white flex justify-center items-center px-8 py-4">
+        <div class="flex space-x-6">
+            <a href="#" class="text-yellow-400 font-bold">Home</a>
+            <a href="#" class="hover:text-yellow-400">Matches</a>
+            <a href="#" class="hover:text-yellow-400">Leaderboards</a>
+            <a href="#" class="hover:text-yellow-400">Community</a>
+            <a href="#" class="hover:text-yellow-400">About us</a>
+        </div>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded ml-6">Sign Up</button>
+        </nav>
+    
+    <!-- Hero Section -->
+    <div class="flex flex-col justify-center items-center h-screen bg-blue-200  w-full">
+        <div class="bg-gray-900 text-white rounded-lg flex max-w-4xl w-full h-[500px] z-[2] relative drop-shadow-lg">
+            <!-- Left Text Section -->
+            <div class="w-1/2 p-10 absolute z-10">
+                <h1 class="text-3xl font-bold text-white" style ="text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.5)">Revolutionizing Sports Networking & Live Scoring!</h1>
+                <p class="mt-4 text-white font-semibold" style ="text-shadow: 1px 1px 1px rgba(106, 149, 62, 0.5)">Join & track matches in Cricket, Badminton, Football, and more!</p>
+                <button class="mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Join Now</button>
+            </div>
+            <!-- Right Image Section -->
+            <!-- <div> -->
+                <div class="absolute rounded-lg inset-0 bg-gradient-to-r from-gray-500 to-transparent"></div>
+                <img id="slideshow" src="./Images/WhatsApp Image 2025-02-24 at 11.18.49 AM.jpeg" alt="Sports Image" class=" w-full h-full rounded-lg">
+                <!-- Play/Pause Button -->
+                <button id="pausePlayBtn" class="absolute bottom-2 right-2 bg-gray-800 text-white px-4 py-1 rounded opacity-75 hover:opacity-100">
+                    Pause
+                </button>
+                <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <span class="bubble w-2 h-2 bg-white rounded-full opacity-50 cursor-pointer" onclick="jumpToImage(0)"></span>
+                    <span class="bubble w-2 h-2 bg-white rounded-full opacity-50 cursor-pointer" onclick="jumpToImage(1)"></span>
+                    <span class="bubble w-2 h-2 bg-white rounded-full opacity-50 cursor-pointer" onclick="jumpToImage(2)"></span>
+                    <span class="bubble w-2 h-2 bg-white rounded-full opacity-50 cursor-pointer" onclick="jumpToImage(3)"></span>
+                </div>
+            <!-- </div> -->
+        </div>
+        <img src="./Images/Polygon 1.png" alt="" class="absolute z-[1] bottom-[-4.6rem] w-full">
+    </div>
+    <div>
+        <div class="flex flex-col justify-center items-center h-screen bg-black w-full relative" loading="lazy">
+            <h1 class="absolute left-[130px] top-1 text-white text-2xl font-bold">Upcoming Matches</h1>
+            <div class="bg-gray-900 text-white rounded-lg flex max-w-4xl w-full h-[500px] z-[2] relative shadow-lg">
+            </div>
+        </div>
+    </div>
+    <script>
+        const images = [
+            "./Images/WhatsApp Image 2025-02-24 at 11.18.49 AM.jpeg",
+            "./Images/WhatsApp Image 2025-02-24 at 5.15.27 PM.jpeg",
+            "./Images/WhatsApp Image 2025-02-24 at 6.03.11 PM.jpeg",
+            "./Images/WhatsApp Image 2025-02-24 at 3.36.06 PM.jpeg"
+        ];
+        let index = 0;
+        let isPlaying = true;
+        let interval = setInterval(changeImage, 2000);
+    
+        function changeImage() {
+            index = (index + 1) % images.length;
+            updateSlideshow();
+        }
+    
+        function jumpToImage(i) {
+            index = i;
+            updateSlideshow();
+            resetInterval(); // Restart interval to maintain autoplay
+        }
+    
+        function updateSlideshow() {
+            document.getElementById("slideshow").src = images[index];
+    
+            // Update active bubble
+            document.querySelectorAll(".bubble").forEach((bubble, i) => {
+                bubble.classList.toggle("opacity-100", i === index);
+                bubble.classList.toggle("opacity-50", i !== index);
+            });
+        }
+    
+        document.getElementById("pausePlayBtn").addEventListener("click", function () {
+            if (isPlaying) {
+                clearInterval(interval);
+                this.textContent = "Play";
+            } else {
+                interval = setInterval(changeImage, 2000);
+                this.textContent = "Pause";
+            }
+            isPlaying = !isPlaying;
+        });
+    
+        function resetInterval() {
+            clearInterval(interval);
+            interval = setInterval(changeImage, 2000);
+            isPlaying = true;
+            document.getElementById("pausePlayBtn").textContent = "Pause";
+        }
+    
+        updateSlideshow();
+    </script>    
+</body>
+</html>
